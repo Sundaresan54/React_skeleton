@@ -1,20 +1,34 @@
 import React from 'react';
 import ListItem from './Listitem';
-class List extends React.Component {
-  constructor() {
-    super();
-  }
+import ListManager from './ListManager';
 
-  render(){
-  let incredients = [{"id":1,"name":"pepper"},{"id":2,"name":"salt"}];
- let ListItems = incredients.map(function(item){
-   return <ListItem id={item.id} incredients ={item.name} />
- });
+class List extends React.Component {
+constructor(){
+  super();
+  this.state={title:"Incredients"}
+}
+
+  render() {
+    console.log(this.props.items,"hiuyi");
+    let createItems='';
+
+ let createItem = (text,index)=>{
+console.log(text,'text123');
+console.log(index,'index1234');
+   return <ListItem key={index+text} text ={text} />;};
+   if(this.props.items){
+     console.log(this.props.items,"comingeeee");
+      createItems=this.props.items.map(createItem);
+
+console.log(createItem,"bee");
+ };
 
 
     return(
       <div>
-        <ul>{ListItems}</ul>
+        <ul>
+      {createItems}
+</ul>
       </div>
     );
   }

@@ -1,15 +1,14 @@
 import React from 'react';
 
 class ListItem extends React.Component {
-  constructor() {
-    super();
-  }
+
   render(){
+    console.log(this.props.items,"propscoming");
     return(
       <div className="ListItem">
         <li>
-          <h4>{this.props.id}
-            {this.props.incredients} </h4>
+          <h4>
+            {this.props.text} </h4>
         </li>
       </div>
     );

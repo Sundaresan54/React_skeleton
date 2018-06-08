@@ -1,18 +1,14 @@
 import React from 'react';
 import Lifecycle from './Lifecycle';
-import List from './components/List';
+import ListManager from './components/ListManager';
 
 class App extends React.Component {
-   constructor() {
-      super();
-
-    };
 
    render() {
       return (
          <div>
           <Lifecycle />
-          <List />
+          <ListManager title="Incredients" />
          </div>
       );
    }
